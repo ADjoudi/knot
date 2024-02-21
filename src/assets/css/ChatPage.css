@@ -1,0 +1,12 @@
+.chat-page {
+  display: flex;
+  flex-direction: row;
+
+  background-color: var(--color-background);
+}
+
+.chat-nav {
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--color-highlight);
+}

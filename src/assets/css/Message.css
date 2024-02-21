@@ -1,0 +1,85 @@
+.message-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.message-container img {
+  align-self: flex-start;
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+}
+.message-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: start;
+}
+
+.message-container div section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.message-container div section h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-main);
+}
+.message-container div section h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+.message-container div p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-main);
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-highlight);
+  border-radius: 0rem 3rem 3rem 1rem;
+}
+
+.user-message-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.5rem;
+}
+.user-message-container img {
+  align-self: flex-start;
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+}
+.user-message-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: end;
+}
+
+.user-message-container div section {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.5rem;
+}
+.user-message-container div section h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-main);
+}
+.user-message-container div section h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+.user-message-container div p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-background);
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-secondary);
+  border-radius: 3rem 0rem 1rem 3rem;
+}

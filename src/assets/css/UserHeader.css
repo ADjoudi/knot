@@ -1,0 +1,39 @@
+.user-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 1.5rem;
+}
+
+.user-header img:first-child {
+  width: 3.75rem;
+  aspect-ratio: 1/1;
+}
+
+.user-header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.user-header div h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-main);
+}
+
+.user-header div p {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.user-header img:last-child {
+  padding: 0.25rem;
+  border-radius: 100%;
+  margin-left: auto;
+}

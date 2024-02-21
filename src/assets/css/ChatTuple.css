@@ -1,0 +1,38 @@
+.chat-tuple-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.chat-tuple-container:hover {
+  background-color: var(--color-highlight);
+}
+
+.chat-tuple-container img {
+  width: 3.25rem;
+  aspect-ratio: 1/1;
+}
+
+.chat-tuple-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.chat-tuple-container div h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-main);
+}
+
+.chat-tuple-container div p {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
