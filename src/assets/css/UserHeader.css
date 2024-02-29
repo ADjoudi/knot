@@ -32,8 +32,14 @@
   color: var(--color-text-light);
 }
 
-.user-header img:last-child {
+.user-header .button-settings {
   padding: 0.25rem;
   border-radius: 100%;
   margin-left: auto;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.user-header .button-settings:hover {
+  background-color: var(--color-background-light);
 }

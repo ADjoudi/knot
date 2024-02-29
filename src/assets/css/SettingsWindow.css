@@ -1,0 +1,27 @@
+.window-container {
+  position: absolute;
+  width: 100dvw;
+  height: 100dvh;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-container {
+  min-width: 15rem;
+  min-height: 20rem;
+  width: 50%;
+  height: 80%;
+  background-color: var(--color-background-light);
+  border-radius: 0.25rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  z-index: 50;
+  box-shadow: var(--box-shadow-highlight);
+}

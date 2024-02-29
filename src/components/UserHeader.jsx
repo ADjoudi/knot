@@ -3,15 +3,20 @@ import "../assets/css/UserHeader.css";
 import pfp_placeholder from "../assets/images/pfp-placeholder.png";
 import settings_icon from "../assets/icons/settings.svg";
 
-function UserHeader() {
+function UserHeader({ user, openSettingsWindow }) {
   return (
     <div className="user-header">
       <img src={pfp_placeholder} alt="" />
       <div>
-        <h2>Abdelouahab</h2>
+        <h2>{user.name}</h2>
         <p>@dev</p>
       </div>
-      <img src={settings_icon} alt="" />
+      <img
+        className="button-settings"
+        src={settings_icon}
+        alt=""
+        onClick={openSettingsWindow}
+      />
     </div>
   );
 }

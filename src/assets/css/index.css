@@ -2,12 +2,34 @@
 
 :root {
   --color-background: #181818;
+  --color-background-light: #323232;
   --color-main: #fcfcfc;
   --color-text-light: #fcfcfccc;
   --color-secondary: #87b4dd;
+  --color-warning: #dd8787;
   --color-highlight: #252525;
 
   font-family: "Poppins", sans-serif;
+
+  --box-shadow-highlight: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+a {
+  text-decoration: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.65rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fcfcfc3d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-highlight);
 }
 
 body,
@@ -15,6 +37,7 @@ body * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: background-color 0.2s ease;
 }
 body {
   width: 100dvw;
