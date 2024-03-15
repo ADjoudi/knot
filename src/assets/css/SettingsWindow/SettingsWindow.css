@@ -2,22 +2,26 @@
   position: absolute;
   width: 100dvw;
   height: 100dvh;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.637);
   backdrop-filter: blur(10px);
   z-index: 20;
+  overflow: auto;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.settings-container {
-  min-width: 15rem;
-  min-height: 20rem;
-  width: 50%;
-  height: 80%;
-  background-color: var(--color-background-light);
-  border-radius: 0.25rem;
+.window-container .settings-container {
+  min-width: 40rem;
+  min-height: 40rem;
+
+  height: 80dvh;
+  width: 40dvw;
+  overflow: hidden;
+
+  background-color: var(--color-background);
+  border-radius: 0.5rem;
 
   display: flex;
   flex-direction: row;

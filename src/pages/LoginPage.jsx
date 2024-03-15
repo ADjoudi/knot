@@ -1,4 +1,4 @@
-import "../assets/css/LoginPage.css";
+import "../assets/css/LoginPage/LoginPage.css";
 
 import logo from "../assets/images/logo.svg";
 import display from "../assets/images/display.png";
@@ -39,7 +39,7 @@ function LoginPage() {
               name="email"
               id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(() => e.target.value)}
               placeholder="example@email.com"
             />
           </section>
@@ -50,7 +50,7 @@ function LoginPage() {
               name="password"
               id="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(() => e.target.value)}
               placeholder="*******"
             />
           </section>

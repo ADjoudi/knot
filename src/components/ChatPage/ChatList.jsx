@@ -1,4 +1,4 @@
-import "../assets/css/ChatList.css";
+import "../../assets/css/ChatPage/ChatList.css";
 
 import Search from "./Search";
 import ChatTuple from "./ChatTuple";

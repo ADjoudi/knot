@@ -1,7 +1,7 @@
-import "../assets/css/UserHeader.css";
+import "../../assets/css/ChatPage/UserHeader.css";
 
-import pfp_placeholder from "../assets/images/pfp-placeholder.png";
-import settings_icon from "../assets/icons/settings.svg";
+import pfp_placeholder from "../../assets/images/pfp-placeholder.png";
+import settings_icon from "../../assets/icons/settings.svg";
 
 function UserHeader({ user, openSettingsWindow }) {
   return (

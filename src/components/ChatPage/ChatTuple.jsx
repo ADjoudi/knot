@@ -1,6 +1,6 @@
-import "../assets/css/ChatTuple.css";
+import "../../assets/css/ChatPage/ChatTuple.css";
 
-import pfp_placeholder from "../assets/images/pfp-placeholder.png";
+import pfp_placeholder from "../../assets/images/pfp-placeholder.png";
 
 function ChatTuple({ chatTuple, handleTupleClick }) {
   return (

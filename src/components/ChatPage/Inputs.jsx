@@ -1,8 +1,8 @@
-import "../assets/css/Inputs.css";
+import "../../assets/css/ChatPage/Inputs.css";
 
-import send_icon from "../assets/icons/send.svg";
-import file_upload_icon from "../assets/icons/file_upload.svg";
-import image_upload_icon from "../assets/icons/image_upload.svg";
+import send_icon from "../../assets/icons/send.svg";
+import file_upload_icon from "../../assets/icons/file_upload.svg";
+import image_upload_icon from "../../assets/icons/image_upload.svg";
 import { useState } from "react";
 
 function Inputs({ contactID, handleSendClick }) {

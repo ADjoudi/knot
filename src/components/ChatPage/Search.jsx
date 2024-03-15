@@ -1,6 +1,6 @@
-import "../assets/css/Search.css";
+import "../../assets/css/ChatPage/Search.css";
 
-import search_icon from "../assets/icons/search.svg";
+import search_icon from "../../assets/icons/search.svg";
 
 function Search() {
   return (

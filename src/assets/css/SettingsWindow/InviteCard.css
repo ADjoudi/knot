@@ -1,0 +1,48 @@
+.invite-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+
+  min-height: 10rem;
+  min-width: 8rem;
+  background-color: var(--color-highlight);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: var(--box-shadow-highlight);
+  cursor: pointer;
+}
+
+.invite-card-container .pfp {
+  width: 3rem;
+  height: 3rem;
+}
+
+.invite-card-container p {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-card-text);
+  text-align: center;
+}
+
+.invite-card-container .actions-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  margin-top: auto;
+}
+
+.invite-card-container .actions-container h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-card-text);
+  text-align: center;
+}
+
+.invite-card-container .actions-container #accept {
+  color: var(--color-secondary);
+}
+.invite-card-container .actions-container #reject {
+  color: var(--color-warning);
+}

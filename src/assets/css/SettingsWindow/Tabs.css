@@ -1,0 +1,81 @@
+.tabs-section {
+  min-width: 16rem;
+  background-color: var(--color-highlight);
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 2.5rem;
+}
+
+.user-info-settings {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.user-info-settings img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.user-info-settings section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.user-info-settings section h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-main);
+}
+
+.user-info-settings section p {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.tabs-section .tabs-category .tab-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.75rem;
+}
+.tabs-section .tab-item:hover {
+  cursor: pointer;
+  background-color: var(--color-background-light);
+  border-radius: 0.5rem;
+}
+
+.tabs-section .tabs-category .tab-item-active {
+  background-color: var(--color-background-light);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow-highlight);
+}
+
+.tabs-section .tabs-category .tab-item img {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+}
+
+.tabs-section .tabs-category .tab-item h3 {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-main);
+}
+
+.tabs-section .tabs-category h3 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-main);
+}

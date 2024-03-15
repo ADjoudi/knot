@@ -1,4 +1,4 @@
-import "../assets/css/SignupPage.css";
+import "../assets/css/SignupPage/SignupPage.css";
 
 import logo from "../assets/images/logo.svg";
 import display from "../assets/images/display.png";
@@ -8,9 +8,9 @@ import { useState } from "react";
 function SignupPage() {
   const navigate = useNavigate();
 
-  const [display_name, setDisplayName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [display_name, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   async function handleSignup(e) {
     e.preventDefault();
@@ -39,7 +39,7 @@ function SignupPage() {
               name="display_name"
               id="display_name"
               value={display_name}
-              onChange={(e) => setDisplayName(e.target.value)}
+              onChange={(e) => setDisplayName(() => e.target.value)}
             />
           </section>
           <section>
@@ -50,7 +50,7 @@ function SignupPage() {
               id="email"
               placeholder="example@email.com"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(() => e.target.value)}
             />
           </section>
           <section>
@@ -61,7 +61,7 @@ function SignupPage() {
               id="password"
               placeholder="********"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(() => e.target.value)}
             />
           </section>
           <button onClick={handleSignup}>Create Account</button>

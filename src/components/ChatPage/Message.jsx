@@ -1,6 +1,6 @@
-import "../assets/css/Message.css";
+import "../../assets/css/ChatPage/Message.css";
 
-import pfp_placeholder from "../assets/images/pfp-placeholder.png";
+import pfp_placeholder from "../../assets/images/pfp-placeholder.png";
 
 function Message({ message }) {
   const time = ((messageDate) => {

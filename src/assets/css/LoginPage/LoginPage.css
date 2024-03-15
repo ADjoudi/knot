@@ -75,6 +75,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   background-color: var(--color-secondary);
+  cursor: pointer;
 
   align-self: center;
   border: none;

@@ -1,10 +1,11 @@
-import { useEffect, useRef } from "react";
-import "../assets/css/Chat.css";
+import "../../assets/css/ChatPage/Chat.css";
 
 import Inputs from "./Inputs";
 import Message from "./Message";
 
-function Chat({ chat, userID, contactID, token }) {
+import { useEffect, useRef } from "react";
+
+function Chat({ chat, userID, contactID, token, socket }) {
   const chatFormatted = chat.map((message, index) => {
     const modifiedMessage = {
       ...message,
@@ -32,6 +33,7 @@ function Chat({ chat, userID, contactID, token }) {
     })
       .then((response) => {
         if (!response.ok) throw Error("Failed to send message");
+        socket.emit("update", { userID, contactID });
       })
       .catch((error) => console.error(error));
   }
@@ -40,6 +42,7 @@ function Chat({ chat, userID, contactID, token }) {
     if (containerRef.current)
       containerRef.current.scrollTop = containerRef.current.scrollHeight;
   });
+
   return (
     <div className="chat-container" ref={containerRef}>
       {chatFormatted}
