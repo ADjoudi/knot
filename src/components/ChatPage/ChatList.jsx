@@ -9,10 +9,10 @@ function ChatList({ chatList, handleTupleClick }) {
       <h2>messages</h2>
       <Search />
       <div className="chat-tuples-container">
-        {chatList.map((tuple, index) => (
+        {chatList.map((contact, index) => (
           <ChatTuple
             key={index}
-            chatTuple={tuple}
+            contact={contact}
             handleTupleClick={handleTupleClick}
           />
         ))}

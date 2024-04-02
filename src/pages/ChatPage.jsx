@@ -3,27 +3,29 @@ import "../assets/css/ChatPage/ChatPage.css";
 import UserHeader from "../components/ChatPage/UserHeader";
 import ChatList from "../components/ChatPage/ChatList";
 import Chat from "../components/ChatPage/Chat";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import SettingsWindow from "../components/SettingsWindow/SettingsWindow";
 
 import io from "socket.io-client";
 
 function ChatPage() {
-  const location = useLocation();
   const navigate = useNavigate();
 
   const [user, setUser] = useState(null);
+  const [contacts, setContacts] = useState(null);
   const [chat, setChat] = useState([]);
   const [contact, setContact] = useState(null);
   const [windowToggle, setWindowToggle] = useState(false);
 
-  //optional chaining
-  const token = useRef(location.state?.token);
+  const token = localStorage.getItem("token");
 
   const socket = io("http://localhost:3000");
-  socket.on("messages", (arg) => {
-    setChat(() => [...arg]);
+  socket.on("messages", (chatMessages) => {
+    setChat(() => chatMessages);
+  });
+  socket.on("contacts", (contacts) => {
+    setContacts(() => contacts);
   });
 
   function openSettingsWindow() {
@@ -36,41 +38,48 @@ function ChatPage() {
 
   function openChat(e) {
     const contactID = e.currentTarget.id;
+
     setContact(contactID);
 
     fetch("http://localhost:3000/users/chat/" + contactID, {
       method: "GET",
       headers: {
         "content-type": "application/json",
-        Authorization: "Bearer " + token.current,
+        Authorization: "Bearer " + token,
       },
     })
       .then((response) => response.json())
       .then((messages) => {
         setChat(messages);
       });
+    document.querySelectorAll(".contact-container").forEach((tuple) => {
+      tuple.classList.remove("active-contact-container");
+    });
+    e.currentTarget.classList.add("active-contact-container");
   }
 
   useEffect(() => {
-    if (!token.current) navigate("/login");
-  }, [navigate]);
+    if (!token) navigate("/login");
 
-  useEffect(() => {
     fetch("http://localhost:3000/users", {
       method: "GET",
       headers: {
         "content-type": "application/json",
-        Authorization: "Bearer " + token.current,
+        Authorization: "Bearer " + token,
       },
     })
       .then((response) => {
-        if (!response.ok) navigate("/login");
+        if (!response.ok) {
+          navigate("/login");
+          return;
+        }
         return response.json();
       })
       .then((user) => {
         setUser(user);
+        setContacts(user.contacts);
       });
-  }, [navigate]);
+  }, [navigate, token]);
 
   return user ? (
     <div className="chat-page">
@@ -80,20 +89,20 @@ function ChatPage() {
             user={{ name: user.display_name }}
             openSettingsWindow={openSettingsWindow}
           />
-          <ChatList chatList={user.contacts} handleTupleClick={openChat} />{" "}
+          <ChatList chatList={contacts} handleTupleClick={openChat} />{" "}
         </>
       </div>
       <Chat
         chat={chat || []}
         userID={user._id}
         contactID={contact || null}
-        token={token.current}
+        token={token}
         socket={socket}
       />
       {windowToggle && (
         <SettingsWindow
           user={user}
-          token={token.current}
+          token={token}
           closeSettingsWindow={closeSettingsWindow}
         />
       )}

@@ -33,14 +33,14 @@ function Chat({ chat, userID, contactID, token, socket }) {
     })
       .then((response) => {
         if (!response.ok) throw Error("Failed to send message");
-        socket.emit("update", { userID, contactID });
+        socket.emit("message_log_update", { userID, contactID });
+        socket.emit("contacts_update", { userID });
       })
       .catch((error) => console.error(error));
   }
 
   useEffect(() => {
-    if (containerRef.current)
-      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    containerRef.current.scrollTo(0, containerRef.current.scrollHeight);
   });
 
   return (

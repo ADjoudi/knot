@@ -44,6 +44,8 @@
   flex-direction: column;
   gap: 0.5rem;
   align-items: stretch;
+
+  padding: 0rem 1rem;
 }
 
 .form-container form label {
@@ -106,7 +108,7 @@
   flex: 1;
   background-color: var(--color-background-light);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 
   overflow: hidden;

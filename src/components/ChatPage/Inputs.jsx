@@ -8,6 +8,13 @@ import { useState } from "react";
 function Inputs({ contactID, handleSendClick }) {
   const [input, setInput] = useState("");
 
+  const handleBtnClick = (e) => {
+    e.preventDefault();
+    //prevent client sending empty messages
+    if (input.length > 0) handleSendClick(contactID, input);
+    setInput("");
+  };
+
   return (
     contactID && (
       <div className="inputs-container">
@@ -20,13 +27,7 @@ function Inputs({ contactID, handleSendClick }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              handleSendClick(contactID, input);
-              setInput("");
-            }}
-          >
+          <button onClick={handleBtnClick}>
             <img src={send_icon} alt="send" />
           </button>
         </form>

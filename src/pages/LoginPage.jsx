@@ -21,8 +21,9 @@ function LoginPage() {
     });
     if (!response.ok) return;
 
-    const credentials = await response.json();
-    navigate("/home", { state: { token: credentials.token } });
+    const token = await response.json();
+    localStorage.setItem("token", token);
+    navigate("/home");
   }
 
   return (

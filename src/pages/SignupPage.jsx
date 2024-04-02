@@ -22,8 +22,9 @@ function SignupPage() {
     });
     if (!response.ok) return;
 
-    const credentials = await response.json();
-    navigate("/home", { state: { token: credentials.token } });
+    const token = await response.json();
+    localStorage.setItem("token", token);
+    navigate("/home");
   }
   return (
     <div className="signup-page-container">
@@ -38,6 +39,7 @@ function SignupPage() {
               type="text"
               name="display_name"
               id="display_name"
+              placeholder="Display Name"
               value={display_name}
               onChange={(e) => setDisplayName(() => e.target.value)}
             />

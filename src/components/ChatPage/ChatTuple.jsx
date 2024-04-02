@@ -2,17 +2,23 @@ import "../../assets/css/ChatPage/ChatTuple.css";
 
 import pfp_placeholder from "../../assets/images/pfp-placeholder.png";
 
-function ChatTuple({ chatTuple, handleTupleClick }) {
+function ChatTuple({ contact, handleTupleClick }) {
+  const { _id, display_name, last_message, is_user_message } = contact;
+  console.log(is_user_message);
   return (
-    <div
-      className="chat-tuple-container"
-      onClick={handleTupleClick}
-      id={chatTuple._id}
-    >
+    <div className="contact-container" onClick={handleTupleClick} id={_id}>
+      <div className="indicator"></div>
       <img src={pfp_placeholder} alt="" />
       <div>
-        <h3>{chatTuple.display_name}</h3>
-        <p>entum. Tellus sapien curs</p>
+        <h3>{display_name}</h3>
+        {is_user_message ? (
+          <div className="user-message">
+            <p>You: </p>
+            <p>{last_message}</p>
+          </div>
+        ) : (
+          <p>{last_message}</p>
+        )}
       </div>
     </div>
   );
